@@ -1,0 +1,26 @@
+<div class="form"
+  [formGroup]="employeeFormGroup">
+  <mat-form-field>
+    <input matInput
+      formControlName="name"
+      placeholder="Name" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput
+      formControlName="email"
+      placeholder="E-mail" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput
+      [min]="0"
+      type="number"
+      formControlName="salary"
+      placeholder="Salary" />
+  </mat-form-field>
+
+  <button mat-raised-button
+    color="primary"
+    (click)="editMode ? onEdit() : onAdd()"> {{ editMode ? 'Edit Employee' : 'Add Employee'}} </button>
+</div>
